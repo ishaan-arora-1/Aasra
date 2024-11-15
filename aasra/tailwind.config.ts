@@ -35,6 +35,36 @@ const config = {
       },
     },
     extend: {
+      animation: {
+      'spin-slow': 'spin 10s linear infinite', // 10s for slower rotation
+    },
+    transformOrigin: {
+      'center': 'center', // Set the origin of the transformation to the center
+    },
+},
+  },
+  plugins: [],
+};
+
+
+const config = {
+  darkMode: ["class"],
+  content: [
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+	],
+  prefix: "",
+  theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
+    extend: {
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

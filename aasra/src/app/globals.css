@@ -65,5 +65,22 @@
   }
   body {
     @apply bg-background text-foreground;
-  } 
+  }
 } */
+
+.rotate-center {
+  transform-origin: center; /* Set rotation to happen from the center */
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 40s linear infinite; /* Slow down the spinning */
+}
