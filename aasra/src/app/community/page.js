@@ -1,10 +1,48 @@
+"use client"
 import React from 'react'
 
 const page = () => {
   return (
     <div>
       <div className="container mx-auto px-4 py-8 bg-emerald-50">
-        <h1 className="text-3xl text-emerald-800 font-bold mb-8 text-center ">PG Cooking Community</h1>
+        <div className="flex flex-col items-center">
+          <h1 className="text-3xl text-emerald-800 font-bold mb-4 text-center">PG Cooking Community</h1>
+          <button 
+            onClick={() => document.getElementById('communityMembers').classList.toggle('hidden')}
+            className="bg-emerald-500 text-white px-4 py-2 rounded-lg hover:bg-emerald-600 transition-colors mb-8"
+          >
+            My Community
+          </button>
+
+          {/* Community Members Popup */}
+          <div id="communityMembers" className="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+            <div className="bg-white rounded-lg p-6 max-w-md w-full mx-4">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-2xl font-semibold text-emerald-800">Community Members</h2>
+                <button 
+                  onClick={() => document.getElementById('communityMembers').classList.add('hidden')}
+                  className="text-gray-500 hover:text-gray-700"
+                >
+                  ✕
+                </button>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-center p-2 bg-emerald-50 rounded">
+                  <span className="w-8 h-8 bg-emerald-200 rounded-full flex items-center justify-center mr-3 text-green-900">PS</span>
+                  <span className="text-emerald-900">Priya Sharma</span>
+                </div>
+                <div className="flex items-center p-2 bg-emerald-50 rounded">
+                  <span className="w-8 h-8 bg-emerald-200 rounded-full flex items-center justify-center mr-3 text-green-900">AP</span>
+                  <span className="text-emerald-900">Amit Patel</span>
+                </div>
+                <div className="flex items-center p-2 bg-emerald-50 rounded">
+                  <span className="w-8 h-8 bg-emerald-200 rounded-full flex items-center justify-center mr-3 text-green-900">SK</span>
+                  <span className="text-emerald-900">Sarah Khan</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         
         {/* Today's Cook and Dish Section */}
         <div className="bg-yellow-50 rounded-lg shadow-md p-6 mb-8">
